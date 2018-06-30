@@ -156,7 +156,7 @@ class SubscriberTransitionsSpec extends FunSpec with Matchers {
       it ("should return the alert action if a report is sent") {
         val action = subscriberTransitions.action("report 1111 My Address Lane")
         action shouldBe 'isDefined
-        action.get shouldEqual AlertAction("1111 My Address Lane")
+        action.get shouldEqual SubscriberTransitions.AlertAction("1111 My Address Lane")
       }
     }
   }

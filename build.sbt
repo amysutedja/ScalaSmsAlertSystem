@@ -8,7 +8,7 @@ resolvers ++= Seq(
   "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases",
   "Akka Snapshot Repository" at "http://repo.akka.io/snapshots/"
 )
-      
+
 libraryDependencies ++= Seq(
   ehcache,
   ws,
@@ -21,5 +21,14 @@ libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "5.1.34",
   specs2 % Test,
   "com.typesafe.akka" %% "akka-testkit" % "2.5.4" % "test",
-  "org.scalatest" %% "scalatest" % "3.0.4" % "test"
-)      
+  "org.scalatest" %% "scalatest" % "3.0.4" % "test",
+  "com.amazonaws" % "aws-lambda-java-core" % "1.0.0",
+  "com.amazonaws" % "aws-lambda-java-events" % "1.0.0"
+)
+
+assemblyMergeStrategy in assembly <<= (assemblyMergeStrategy in assembly) {
+  (old) => {
+    case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+    case x => MergeStrategy.first
+  }
+}
