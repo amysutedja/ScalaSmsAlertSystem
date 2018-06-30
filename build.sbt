@@ -21,9 +21,7 @@ libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "5.1.34",
   specs2 % Test,
   "com.typesafe.akka" %% "akka-testkit" % "2.5.4" % "test",
-  "org.scalatest" %% "scalatest" % "3.0.4" % "test",
-  "com.amazonaws" % "aws-lambda-java-core" % "1.0.0",
-  "com.amazonaws" % "aws-lambda-java-events" % "1.0.0"
+  "org.scalatest" %% "scalatest" % "3.0.4" % "test"
 )
 
 assemblyMergeStrategy in assembly <<= (assemblyMergeStrategy in assembly) {
